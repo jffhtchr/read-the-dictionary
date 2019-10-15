@@ -1,0 +1,93 @@
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.rtd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $colors-black;
+    color: $colors-light-green;
+    min-height: 100vh;
+    &__container {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+}
+
+.rtd__header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    &__title {
+        height: 175px;
+        background-image: url('../assets/rtd.png');
+        background-position: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: -15px;
+    }
+    &__button{
+        color: black;
+        display: flex;
+        width: 320px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 33px;
+        background-color: $colors-light-green;
+        box-shadow: -3px -3px $colors-dark-green;
+        cursor: pointer;
+    }
+}
+
+.rtd__info-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 40px;
+    background-color: $colors-grey;
+    color: $colors-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+}
+.rtd__info-container {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    max-width: 400px;
+    padding: 15px;
+    max-height: 100px;
+    background-color: $colors-grey;
+    color: $colors-white;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.rtd__story {
+    border: 2px dashed $colors-light-green;
+    height: 200px;
+    color: $colors-white;
+    padding: 15px;
+    position: relative;
+}
+
+.rtd__button--pressed {
+    transform: scale(0.99);
+    background-color: $colors-light-green;
+}
+
+.is-visible-flex {
+    display: flex;
+}
