@@ -12,12 +12,39 @@ app.get('/story', (req, res) => {
     axios.get(`https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=1&api_key=${wordnik_key}`)
     .then(response => {
         const word = response.data[0].word;
-        axios.get(`https://api.wordnik.com/v4/word.json/${word}/examples?includeDuplicates=false&useCanonical=false&limit=5&api_key=${wordnik_key}`)
-        .then(response => {
-            const sentence = response.data.examples[0].text + " ";
-            story += sentence;
-            res.send(story)
-        })
+        return axios.get(`https://api.wordnik.com/v4/word.json/${word}/examples?includeDuplicates=false&useCanonical=false&limit=5&api_key=${wordnik_key}`)
+    })
+    .then(response => {
+        const sentence = response.data.examples[0].text + " ";
+        story += sentence;
+        return; 
+    })
+    .then(() => {
+        return axios.get(`https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=1&api_key=${wordnik_key}`)
+    })
+    .then(response => {
+        const word = response.data[0].word;
+        return axios.get(`https://api.wordnik.com/v4/word.json/${word}/examples?includeDuplicates=false&useCanonical=false&limit=5&api_key=${wordnik_key}`)
+    })
+    .then(response => {
+        const sentence = response.data.examples[0].text + " ";
+        story += sentence;
+        return; 
+    })
+    .then(() => {
+        return axios.get(`https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=1&api_key=${wordnik_key}`)
+    })
+    .then(response => {
+        const word = response.data[0].word;
+        return axios.get(`https://api.wordnik.com/v4/word.json/${word}/examples?includeDuplicates=false&useCanonical=false&limit=5&api_key=${wordnik_key}`)
+    })
+    .then(response => {
+        const sentence = response.data.examples[0].text + " ";
+        story += sentence;
+        return; 
+    })
+    .then(()=>{
+        res.send(story);
     })
     .catch(error => {
         res.send('Sorry, there was a problem: Please try again later.');
