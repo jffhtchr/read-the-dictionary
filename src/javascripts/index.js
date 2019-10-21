@@ -7,8 +7,8 @@ Array.prototype.forEach.call(createStoryButtons, function(el) {
     var bigButton = new BigButton({el:el})
 })
 
-// Info Button
-var infoButtons = document.querySelectorAll(".rtd__info-button")
+// Info Buttons
+var infoButtons = document.querySelectorAll(".rtd__button")
 Array.prototype.forEach.call(infoButtons, function(el) {
     var info = new Info({el})
 })

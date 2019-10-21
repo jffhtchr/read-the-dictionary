@@ -1,0 +1,22 @@
+.rtd__button {
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    background-color: $colors-grey;
+    color: $colors-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.rtd__info-button {
+    top: 0;
+    right: 0;
+}
+
+.rtd__login-button {
+    top: 0;
+    right: 85px;
+}

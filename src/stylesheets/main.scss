@@ -47,20 +47,6 @@ html, body {
     }
 }
 
-.rtd__info-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 70px;
-    height: 40px;
-    background-color: $colors-grey;
-    color: $colors-white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 3;
-}
 .rtd__info-container {
     display: none;
     position: absolute;
@@ -94,6 +80,18 @@ html, body {
     background-color: $colors-light-green;
 }
 
+.rtd__info {
+    display: none;
+}
+
+.rtd__login {
+    display: none;
+}
+
 .is-visible-flex {
     display: flex;
+}
+
+.is-visible-block {
+    display: block;
 }
